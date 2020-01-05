@@ -1,0 +1,18 @@
+{
+  "id": "http://tradex.techx.vn/common/requestHeader",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "header for each request",
+  "type": "object",
+  "discriminator": "token",
+  "properties": {
+    "token": {
+      "$ref": "token.json"
+    },
+    "secToken": {
+      "$ref": "token.json"
+    },
+    "accept-language": {
+      "type": "string"
+    }
+  }
+}

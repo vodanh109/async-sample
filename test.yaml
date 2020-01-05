@@ -1,0 +1,28 @@
+asyncapi: '2.0.0-rc1'
+id: 'urn:array.example.com'
+
+info:
+  title: Very simple example
+  version: '1.0.0'
+
+channels:
+  myChannel:
+    publish:
+      message:
+        description: Simple example
+        payload:
+          $ref: './strategy/echo.json'
+
+components:
+  schemas:
+    myObject:
+      type: object
+      properties:
+        key1:
+          title: A key
+          type: string
+          default: "foo"
+          enum:
+            - foo
+            - bar
+          description: Just an example enum

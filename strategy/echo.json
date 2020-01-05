@@ -1,0 +1,50 @@
+{
+  "id": "http://tradex.techx.vn/strategy/signalCreateRequest",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "createSignalRequest schema",
+  "type": "object",
+  "required": [
+    "strategyId",
+    "code",
+    "sellBuyType",
+    "price"
+  ],
+  "allOf": [
+    {
+      "$ref": "../common/baseRequest.json"
+    },
+    {
+      "required": [
+        "strategyId",
+        "code",
+        "sellBuyType",
+        "price"
+      ],
+      "properties": {
+        "strategyId": {
+          "description": "strategyId: Unique id of the strategy which the signal belong",
+          "type": "integer"
+        },
+        "code": {
+          "description": "code: code the the signal tell user to buy",
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 10
+        },
+        "sellBuyType": {
+          "description": "sellBuyType: the user should sell or buy the above code",
+          "type": "string",
+          "enum": [
+            "SELL",
+            "BUY"
+          ]
+        },
+        "price": {
+          "description": "price: The price that user should place their order at ",
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      }
+    }
+  ]
+}
